@@ -1,0 +1,104 @@
+//create a list of 10 words that start with 'c'
+
+
+#include <iostream>
+#include<string>
+#include <list>
+using namespace std;
+
+int main ()
+{
+  // constructors used in the same order as described above:
+  list<int> first;                                // empty list of ints
+  list<int> second (4,100);                       // four ints with value 100
+  list<int> third (second.begin(),second.end());  // iterating through second
+  list<int> fourth (third);                       // a copy of third
+
+  // the iterator constructor can also be used to construct from arrays:
+  string myints[] = {"cat","car","carbon","copy","cast","cancel","crazy","control","creepy","craze"};
+  list<string> fifth (myints, myints + 10 );
+
+
+  cout << "The contents of fifth are: ";
+  for (list<string>::iterator it = fifth.begin(); it != fifth.end(); it++)
+    cout << *it << ' ';
+
+  cout << '\n';
+
+  return 0;
+}
+
+//Modify your program to add a word to list interactively from the user
+
+#include <iostream>
+#include<string>
+#include <list>
+using namespace std;
+
+int main ()
+{
+   string newword;
+  // construct
+  // the iterator constructor can also be used to construct from arrays:
+  string myints[] = {"cat","car","carbon","copy","cast","cancel","crazy","control","creepy","craze"};
+  list<string> mylist (myints, myints + 10 );
+  
+ cout<<"Enter a word: ";
+  
+   cin>>newword;
+  
+   mylist.push_front(newword);
+
+
+  cout << "The contents of fifth are: ";
+  for (list<string>::iterator it = mylist.begin(); it != mylist.end(); it++)
+    cout << *it << ' ';
+
+  cout << '\n';
+
+  return 0;
+}
+
+
+
+//Modify your program to ask the user for a word until the user enters "Ends"
+
+#include<string>
+#include <list>
+using namespace std;
+
+int main ()
+{
+   string newword;
+  // construct
+  // the iterator constructor can also be used to construct from arrays:
+  string myints[] = {"cat","car","carbon","copy","cast","cancel","crazy","control","creepy","craze"};
+  list<string> mylist (myints, myints + 10 );
+  
+ cout<<"Enter a word: ";
+  
+   cin>>newword;
+   while (newword!="Ends")
+   {
+       
+  
+   mylist.push_front(newword);
+   
+ cout<<"Enter a word: ";
+  
+   cin>>newword;}
+  
+{
+
+  cout << "The contents of fifth are: ";
+  for (list<string>::iterator it = mylist.begin(); it != mylist.end(); it++)
+    cout << *it << ' ';
+
+  cout << '\n';
+  
+  
+}
+  
+
+  return 0;
+}
