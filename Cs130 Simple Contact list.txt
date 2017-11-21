@@ -1,0 +1,69 @@
+#include <iostream>
+#include<list>
+using namespace std;
+
+class Contacts
+{
+private:
+    string firstName, lastName, phoneNum;
+
+public:
+    Contacts(string x=" ", string y=" ", string z=" "):
+	firstName(x), lastName(y), phoneNum(z)
+    {
+    }
+
+    friend ostream& operator<< (ostream &out, const Contacts &contacts);
+};
+
+ostream& operator<< (ostream &out, const Contacts &contacts)
+{
+    // Since operator<< is a friend of the Contacts class, we can access
+	 //Contacts's members directly.
+    out << "Contacts(" << contacts.firstName << ", " << contacts.lastName << ", "
+	<< contacts.phoneNum << ")";
+
+    return out;
+}
+
+int main()
+{
+    string input;
+    string firstName, lastName, phoneNum;
+  // construct
+  // the iterator constructor can also be used to construct from arrays:
+  string myints[] = {"ayesha","sultana","","456321"};
+ 
+  	cout<<"Do you want to enter an input? "<<endl;
+ 	cout<<" Enter Y or N "<<endl;
+  	cin>>input;
+  
+     	cout<<"Enter First Name: ";
+
+   	cin>>firstName;  //asks the user for first name
+        
+       	cout<<"Enter Last Name: ";  //asks the user for last name
+
+        	 cin>>lastName;
+
+ 
+       	 cout<<"Enter Phone Number: ";  //asks the user for phone number
+
+        	cin>>phoneNum;
+        
+         	list<Contacts> mylist;
+ 
+   
+    mylist.push_front(Contacts (firstName,lastName, phoneNum)); // prints the info in order 
+    cout<<mylist.front(); // adds the info in the begining
+
+    
+     	cout << "The contacts are: ";
+   for (list<Contacts>::iterator it = mylist.begin(); it != mylist.end(); it++)
+    cout << *it << ' ';
+
+  	  cout << '\n';
+  
+
+  return 0;
+}
