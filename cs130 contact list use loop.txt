@@ -31,18 +31,17 @@ int main()
     string firstName, lastName, phoneNum;
   // construct
   // the iterator constructor can also be used to construct from arrays:
-  string mycontacts[] = {"ayesha","sultana","","456321"};
+  string mycontacts[] = {"ayesha","sultana","456321"};
   list<Contacts> mylist (mycontacts, mycontacts + 3 );
   
-cout<<" Enter  END to stop"<<endl;
+cout<<" Enter  End to stop"<<endl;
      cin>>input;
   
 while (input!="End")
 {
 
-      cout<<"Do you want to enter an input? "<<endl;
-      cout<<" Enter Y or N "<<endl;
-      cin>>input;
+      cout<<"Enter an input "<<endl;
+      
       cout<<"Enter First Name: ";  
      
 
