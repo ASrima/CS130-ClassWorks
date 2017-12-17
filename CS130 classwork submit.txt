@@ -1,31 +1,21 @@
 //create a list of 10 words that start with 'c'
 
-
-#include <iostream>
+#include<iostream>
 #include<string>
-#include <list>
+#include<list>
 using namespace std;
 
-int main ()
-{
-  // constructors used in the same order as described above:
-  list<int> first;                                // empty list of ints
-  list<int> second (4,100);                       // four ints with value 100
-  list<int> third (second.begin(),second.end());  // iterating through second
-  list<int> fourth (third);                       // a copy of third
-
-  // the iterator constructor can also be used to construct from arrays:
-  string myints[] = {"cat","car","carbon","copy","cast","cancel","crazy","control","creepy","craze"};
-  list<string> fifth (myints, myints + 10 );
-
-
-  cout << "The contents of fifth are: ";
-  for (list<string>::iterator it = fifth.begin(); it != fifth.end(); it++)
-    cout << *it << ' ';
-
-  cout << '\n';
-
-  return 0;
+int main(){
+    
+    string myints[] = {"cat","cow","cool","coupon","cold","cat","couple","cost","cash","cofee"};
+    list<string> cword(myints, myints+10); // adds 10 words from the array myints[]
+    
+    cout<<"The words that starts with c are :";
+    for(list<string>::iterator it =cword.begin(); it !=cword.end(); it++) //adds words until it reaches 10 words where the loop ends
+    cout<<*it<<",";
+    cout<<endl;
+    
+    return 0;
 }
 
 //Modify your program to add a word to list interactively from the user
@@ -82,9 +72,9 @@ int main ()
    {
        
   
-   mylist.push_front(newword);
+   mylist.push_front(newword); //keeps adding the word until the user enters Ends
    
- cout<<"Enter a word: ";
+   cout<<"Enter a word: ";
   
    cin>>newword;}
   
