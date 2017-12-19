@@ -42,7 +42,7 @@ int main()
   string myints[] = {"ayesha","sultana","456321"};
   list<Contacts> mylist(myints, myints +3);
   
-cout<<" Enter  END to stop"<<endl;
+cout<<" Enter  End to stop"<<endl;
      cin>>input;
   
 while (input!="End")
@@ -67,15 +67,15 @@ while (input!="End")
      list<Contacts> mylist;
      mylist.push_front(Contacts (firstName,lastName, phoneNum));
        cout<<mylist.front();
-     cin>>input;
+       cin>>input;
      
   }
 
-  cout << "The contacts are: ";
+  	cout << "The contacts are: ";
   for (list<Contacts>::iterator it = mylist.begin(); it != mylist.end(); it++)
-    cout << *it << ' ';
+       cout << *it << ' ';
 
-  cout << '\n';
+       cout << '\n';
   
 
   return 0;
